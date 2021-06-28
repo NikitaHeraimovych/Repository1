@@ -29,7 +29,7 @@ public class Controller {
             sc.next ();
         }
         int res = sc.nextInt ();
-        if (res < model.getUpperBound () && res > model.getBottomBound ()){
+        if (res <= model.getUpperBound () && res >= model.getBottomBound ()){
             return res;
         }
         view.printMessage (View.WRONG_VALUE_ERROR);
