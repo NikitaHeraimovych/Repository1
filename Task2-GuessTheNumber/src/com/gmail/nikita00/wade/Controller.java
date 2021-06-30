@@ -13,7 +13,7 @@ public class Controller {
 
     public void processUser(){
         Scanner sc = new Scanner (System.in);
-        view.printMessage (View.START_MESSAGE);
+        view.printStartMessage (model.getBottomBound (), model.getUpperBound ());
         int number;
         int response;
         while ((response = (model.equalsRandomNumber (number = inputIntWithScanner (sc))))!=0){

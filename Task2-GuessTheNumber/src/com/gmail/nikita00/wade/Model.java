@@ -9,11 +9,11 @@ public class Model {
     private int bottomBound;
     private int upperBound;
 
-    public Model () {
+    public Model (int range) {
         tryList = new ArrayList<> ();
         bottomBound = 0;
-        upperBound = 100;
-        randomNumber = (int)(Math.random ()*101);
+        upperBound = range;
+        randomNumber = (int)(Math.random ()*(range+1));
     }
 
     public int equalsRandomNumber(int number){
@@ -24,7 +24,9 @@ public class Model {
             addTryToTryList (number);
             upperBound = number;
             return response;
-        }else bottomBound = number;
+        }else {
+            bottomBound = number;
+        }
         addTryToTryList (number);
         return response;
     }

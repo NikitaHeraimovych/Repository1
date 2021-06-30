@@ -2,7 +2,7 @@ package com.gmail.nikita00.wade;
 
 public class View {
     public static final String WRONG_VALUE_ERROR = "You entered incorrect data or an invalid number. Repeat please:";
-    public static final String START_MESSAGE = "Hello, it's simple \"Guess the number\" game,\nand you can try to guess number between 0 & 100";
+    public static final String START_MESSAGE = "Hello, it's simple \"Guess the number\" game,\nand you can try to guess number between %d and %d";
 
     private static final String NUMBER_LESS_FORMAT = "Your number (%d) is less, input number in diapason between %d and %d \nyour tries: %s";
     private static final String NUMBER_GREATER_FORMAT = "Your number (%d) is greater, input number in diapason between %d and %d\n your tries: %s";
@@ -11,6 +11,9 @@ public class View {
 
     public void printMessage(String message){
         System.out.println (message);
+    }
+    public void printStartMessage(int bottomBound, int upperBound){
+        System.out.printf ((START_MESSAGE) + "%n", bottomBound, upperBound);
     }
 
     public void printGameInfo(int response, int number, int bottomBound, int upperBound, String tries){
