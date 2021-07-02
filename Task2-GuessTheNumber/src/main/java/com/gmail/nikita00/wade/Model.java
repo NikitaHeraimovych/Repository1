@@ -34,7 +34,7 @@ public class Model {
     }
 
     public void setRandomNumber(){
-        randomNumber = (int)Math.ceil (Math.random() * (upperBound - bottomBound - 1) + bottomBound + 1);
+        randomNumber = (int)Math.ceil (Math.random() * (upperBound - bottomBound - 1) + bottomBound);
     }
     public int getBottomBound () {
         return bottomBound;
