@@ -1,4 +1,7 @@
-/Task2-GuessTheNumber/.idea/
-/Task2-GuessTheNumber/out/
-Task1/.idea/
-Task1/out/
+/*/out/
+/shelf/
+/workspace.xml
+*.iml
+.*/
+/*/*.iml
+.gitignore
