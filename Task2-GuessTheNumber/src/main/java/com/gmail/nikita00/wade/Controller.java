@@ -13,6 +13,8 @@ public class Controller {
 
     public void processUser(){
         Scanner sc = new Scanner (System.in);
+        model.setPrimaryBarrier (GlobalConstants.PRIMARY_MIN_BARRIER, GlobalConstants.PRIMARY_MAX_BARRIER);
+        model.setRandomNumber ();
         view.printStartMessage (model.getBottomBound (), model.getUpperBound ());
         int number;
         int response;

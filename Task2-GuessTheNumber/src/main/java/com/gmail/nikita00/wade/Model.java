@@ -4,30 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Model {
-    private final int randomNumber;
-    private final List<Integer> tryList;
+    private final List<Integer> tryList = new ArrayList<> ();
+    private int randomNumber;
     private int bottomBound;
     private int upperBound;
 
-    public Model (int range) {
-        tryList = new ArrayList<> ();
-        bottomBound = 0;
-        upperBound = range;
-        randomNumber = (int)(Math.random ()*(range+1));
-    }
-
     public int equalsRandomNumber(int number){
         int response = Integer.compare (number, randomNumber);
+        addTryToTryList (number);
+
         if (response == 0) {
             return response;
         }else if (response == 1) {
-            addTryToTryList (number);
             upperBound = number;
             return response;
         }else {
             bottomBound = number;
         }
-        addTryToTryList (number);
         return response;
     }
 
@@ -35,6 +28,14 @@ public class Model {
         tryList.add (number);
     }
 
+    public void setPrimaryBarrier(int min, int max){
+        this.bottomBound = min;
+        this.upperBound = max;
+    }
+
+    public void setRandomNumber(){
+        randomNumber = (int)Math.ceil (Math.random() * (upperBound - bottomBound - 1) + bottomBound + 1);
+    }
     public int getBottomBound () {
         return bottomBound;
     }
@@ -43,6 +44,9 @@ public class Model {
         return upperBound;
     }
 
+    public int getRandomNumber () {
+        return randomNumber;
+    }
 
     public String getTryListString () {
         return tryList.toString ();
