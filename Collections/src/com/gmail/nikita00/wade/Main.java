@@ -10,20 +10,20 @@ import java.util.Map;
 //
 public class Main {
 
-    public static void main(String[] args) {;
-        ArrayList<Integer> arr = new ArrayList<> ( List.of ( 1,1,2,2,2,3,10,5,5,5,5 ) );
-        task1 (arr);
+    public static void main (String[] args) {
+        ;
+        ArrayList<Integer> arr = new ArrayList<> (List.of (1, 1, 2, 2, 2, 3, 10, 5, 5, 5, 5));
+        System.out.println (task1 (arr) );
     }
 
 
     //Есть ArrayList<Integer> - ов. За один проход подсчитать количество повторений каждого элемента.
-    public static void task1(ArrayList<Integer> arr){
-        Map<Integer, Integer> map = new HashMap<> ();
-
+    public static Map<Integer, Integer> task1 (ArrayList<Integer> arr) {
+        Map<Integer, Integer> map = new HashMap<> ( );
         for (int i : arr) {
-            map.computeIfPresent (i, (s, a) -> a+=1);
-                map.putIfAbsent (i, 1);
+            map.computeIfPresent (i, (k, v) -> v += 1);
+            map.putIfAbsent (i, 1);
         }
-        System.out.println (map );
+        return map;
     }
 }
